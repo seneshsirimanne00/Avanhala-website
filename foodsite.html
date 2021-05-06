@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Avanhala</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+		
+    </head>
+    <body>
+		<div id="nav">   <!-- nav bar starts here -->
+			<ul>
+			<li>
+				<select id="blogSelect" style="background-color:transparent;color:black;position:relative;top:12px;right:10px;border-radius:10px;padding:3px">
+					<option>Learn About</option>
+					<option value="roti">Roti</option>
+					<option value="kiribath">Kiri Bath</option>
+					<option value="hoppers">Hoppers</option>
+					<option value="kottu">Kottu</option>
+				</select>
+			</li>
+			<li><a href="homePage.html">Sitemap</a></li>
+			<li><a href="Gallery.html">Gallery</a></li>
+			  <li><a href="about.html">About</a></li>
+			  <li><a href="contact.html">Contact</a></li>
+			  <li><a href="nicestyle.html">Food Menu</a></li>
+			  <li><a class="active" href="foodsite.html">Home</a></li>  
+			</ul>       <!-- nav bar ends  -->
+			
+			<div style="left:0; top:0; position:absolute;"><img src="images/logo tiny.jpg" alt="logo" style="width:120px;height:120px;border-radius: 80px;"/></div>
+		</div>
+		<div class="parallaxx"> <!-- div part on top of first image -->
+		
+			<h1><br>Avanhala.</h1><br>  <!-- restaurent name displayed here -->
+			<h3 style="font-family : Papyrus,fantasy;color:white;text-align:center;">Sri Lankan Authentic Food</h3>
+			<div style="text-align: center;"><button class="btn "><a  style="text-decoration: none; color: inherit;"href="nicestyle.html"></span>Go to Menu<span></a></button></div>
+		
+		</div>
+		
+		<div class="middle1" >   <!-- first top layer for content /welcome message is here   -->
+			<div>
+				
+				<div class="text">
+					<h1 style="color: #646464;font-family : Papyrus,fantasy;" >Welcome</h1>
+					We take pride in serving authentic sri lankan food made using recipes that have been handed down over several genrations by our ancestors. 
+					using all natural herbs and spices grown in our beloved island nation we look foward to serving your family with delicious delicacies 
+					that will surely amaze you.<br><br><br>
+					<img src="images/a55.jpg" alt="food image"><img alt="food image" style="width:35%;height:300px;"src="images/a44.jpg"><img alt="food image" src="images/a66.jpg">
+				</div>
+				
+			</div>
+		</div>
+		
+		</div>
+		<div class="parallax1">        <!-- div part on top of second image -->
+			<div style="float: center;">
+			<p style="position:relative;top:300px;font-size : 50px;text-shadow: 2px 2px 4px #000000;">Know your food ? try out our quiz!!!</p>
+			<button class="but1"id="myBtn">Go to Quiz</button>
+			</div>
+			
+		</div>
+		<div class="middle2" >  <!-- footer part and logo  -->
+		<button onclick="scrollup()" id="toup" title="Go to top">&#8679 </button>
+		<footer>
+		<div style="text-align: center;"> 
+			<img src="images/logo tiny.jpg" alt="DOWN IMAGE" style="margin-top: 180px; width:180px;height:180px;border-radius:100px;position: middle;"/><br>
+			<img src="images/fac.jpg" style="margin-top: 20px;height:30px;border-radius:30px; "/>
+			<img src="images/yac.jpg" style="height:30px;border-radius:20px;"/>
+		</div>
+		<p style="font-size:15px;color : #646464;float: bottom;">ALL RIGHTS RESERVED COPYRIGHT © 2020 - DESIGNED BY GROUP V</p>
+		</footer>
+		</div>
+		<div id="page editor" style="z-index:2;float:right;padding-bottom:30px;padding-right:10px;"><a href="pageeditorsenesh.html">page editor</a></div>
+		
+		<!--quiz modal part starts here  -->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close">&times;</span>
+			<img style="width:600px; height:250px; position:relative; left:25%; border-radius:15px;" src="images/w1.jpg">
+			<h2 style="text-align=center;">Are you ready to test your knowledge about Ceylon food? </h2>
+			
+			<p> <b>This is a quiz about Sri lankan authentic food. follow the below instructions
+			to proceed.</b></p><br>
+			<p> 1.Quiz will be up for ten minutes and once the time is over,your time and the result will be displayed.<br>
+			2.If you finish the quiz before the countdown click the submit button to get results <br>
+			3.there will be ten questions and click on a radio button which is there with ur answer to answer.<br>
+			4.Click the above button to enter the quiz.</p>
+			</img> <button class="but2"><ul><li><a href="quiz.html"><span>Start!</span></a></ul></li></button>
+			
+		</div>
+	</div>
+
+	<script>    <!-- java script part for showing modal and back to top button -->
+	window.onscroll = function() {DisplaytoTop()};
+            function DisplaytoTop(){            //to display toTopButton only when scrolled below the entrance screen
+                if(document.documentElement.scrollTop > 10){
+                    document.getElementById("toup").style.display = "block";
+                }else{
+                    document.getElementById("toup").style.display = "none";
+                }
+            }
+
+            function scrollup(){         
+                document.documentElement.scrollTop = 0;
+            }
+	// js for modal part stats here
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("myBtn");
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+	
+	//Detects Clicks on the blog select and redirects user to appropriate blog
+	document.getElementById("blogSelect").addEventListener("click",redirect);
+	function redirect(){
+		var option = document.getElementById("blogSelect").value;
+		if(option == "roti"){
+			window.location.href = "personalpage_mudith.html";
+		}
+		if(option == "kiribath"){
+			window.location.href = "personalpage_vibudha.html";
+		}
+		if(option == "kottu"){
+			window.location.href = "personalpage_venura.html";
+		}
+		if(option == "hoppers"){	
+			window.location.href = "personalpage_senesh.html";
+		}
+	}
+	
+	</script>
+		
+    </body>
+</html>

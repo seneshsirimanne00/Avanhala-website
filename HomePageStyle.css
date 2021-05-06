@@ -1,0 +1,72 @@
+body{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+rect{
+    stroke-width: 5px;
+    stroke: white;
+    outline-color: blue;
+    fill: transparent;
+}
+
+.navIcons:hover{
+    stroke: darksalmon;
+    background-color: darksalmon;
+}
+
+li a:hover:not(.active) {
+    background-color: #E5E5E5;
+}
+
+.rectText{
+    fill:white;
+}
+
+#nav {
+    position:fixed;
+    top:0;
+    right:0;
+    background-color:white;
+    opacity:0.95;
+    width:100%;
+    z-index:2;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+li {
+    float: right;
+    background-color: transparent;
+}
+
+li a {
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-family: "Courier New", Courier, monospace;
+    border-radius: 15px;
+    background-color: transparent;
+}
+
+.connector{
+    stroke:white;
+    stroke-width: 5px;
+}
+
+#pageEditorAnchor{
+    position: absolute;
+    background-color: aquamarine;
+    bottom: 20px;
+    left: 20px;
+}
+
+

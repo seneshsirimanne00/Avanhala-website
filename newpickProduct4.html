@@ -1,0 +1,419 @@
+<!doctype html>
+<head>
+<script type="text/javascript" src="Bill.js"></script>
+<script>
+		var time = "Dinner";
+		var cart1 ;
+		var inputValue;
+		var bucket1;
+		function getValue(){
+				
+				alert(cart1);
+				
+				
+			}
+		
+		 function reply_click(clicked_id)
+  {
+      alert(clicked_id);
+	  if(clicked_id=="myBtn1")
+	  {
+		inputValue = document.getElementById("itemNums1").value;
+		bucket1 = parseFloat(inputValue);
+		if(isNaN(bucket1))
+		{
+			alert("Please input numeric numbers");
+		}
+		else
+		{
+
+		
+		if(inputValue!="0" & inputValue!=" ")
+		{
+			cart1 = "Set menu for" + " " + time + "-" + bucket1 + "orders";
+			alert(cart1);
+		}
+		else
+		{
+			cart1 = "You didnt order anything";
+		}
+		}
+		
+	  }
+	 
+		
+	  }
+	  
+  
+</script>
+<style>
+body{
+background-color: #f0ceaf;
+font-family :cursive ;
+
+}	
+	/*starting of nav bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: transparent; 
+  
+}
+
+li {
+  float: right;
+  background-color: transparent;
+}
+
+li a {
+  display: block;
+  color:black;
+  text-align: center;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+li a:hover:not(.active) {
+  background-color: #E5E5E5;
+}
+.active {
+  background-color: #646464;
+  color:white;
+} 
+#nav {
+	position:fixed;
+	top:0;
+	right:0;
+	background-color:white;
+	opacity:0.95;
+	width:100%;
+	z-index:2;
+} 
+/*end of nav bar*/
+.FirstProduct {background-color: cornflowerblue;}
+
+.firstText {
+text-align: center;
+
+}
+
+.FirstProduct {text-align: center;}
+.middle2{
+	height:100px;
+	width:1600px;
+	background-color:white;
+    font-size:36px;
+	
+}
+button{
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	padding: 14px 28px;
+	font-size: 16px;
+
+}
+input[type=text], select, textarea {
+  width: 200px;
+  color: #646464;
+  background-color: transparent;
+  border-color: white;
+  padding: 20px;
+  border: 2px solid #646464;
+  border-radius: 4px;
+  resize: vertical;
+  margin:15px;
+}
+textarea{
+  color: #646464;
+  background-color: transparent;
+  border-color: white;
+  border: 2px solid #646464;
+  border-radius: 4px; 
+  width: 478px;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 160%; 
+  overflow: scroll;
+ 
+}
+.modal p{
+	color:black;
+	text-align:left;
+}
+
+/* Modal Content */
+.modal-content {
+background-color:white;
+  border-radius: 40px;
+  margin: auto;
+   font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  border: 1px solid #888;
+ width:80%;
+ height:160%;
+ 
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.outerMost{
+  width: 100%;
+  padding: 40px;
+}
+
+.checkoutBox{
+  max-height:1000px;
+  max-width: 500px;
+  margin: 0px auto;
+  background: #fff;
+  padding: 20px 40px 30px;
+
+  border-top: 7px solid darkgray;
+}
+
+.title{
+  color: 196C7D;
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+
+
+.input-form .items{
+  margin-bottom: 20px;
+}
+
+.data-1 .items .input,
+.data-2 .items .input,
+.data-3 .items .input{
+    background: transparent;
+    border: 2px solid #BDBDBD;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    color: #212121;
+    border-radius: 3px;
+}
+
+
+
+.submitbutton{
+	background:white ;
+	color: 196C7D;
+	font-size: 1.25em;	
+	padding: 10px 0;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 5px;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.cvcId{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cvcId .tip{
+  color: #d4d4d4;
+  border: 2px solid #d4d4d4;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align:center;
+  cursor: pointer;
+}
+
+.cvcId .cvcid-img{
+  position: absolute;
+  top: -300%;
+  right: 0;
+  background: #5f6c7d;
+  padding: 12px;
+  border-radius: 5px;
+  display: none;
+}
+
+.cvcId .cvcId-img img{
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+.cvcId:hover .cvcId-img{
+  display: block;
+}
+
+input{
+     background-color:white;
+	 border: 2px solid black;
+	 padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 25px;
+	text-align: center;
+
+}
+</style>    
+    <title>
+        Pick the products you want to buy
+    </title>
+</head>
+<body>
+    <div id="nav">
+		<ul>
+		  <li><a href="about.html">About</a></li>
+		  <li><a href="contact.html">Contact</a></li>
+		  <li><a class="active" href="nicestyle.html">Food Menu</a></li>
+		  <li><a href="foodsite.html">Home</a></li>  
+        </ul>
+		<div style="left:0; top:0; position:absolute;">
+			<img src="images/logo tiny.jpg" alt="logo" style="width:120px;height:120px;border-radius:80px;"/>
+		</div>
+	</div> 
+	<div id = "mainContainer" style="left:0; top:50px; position:relative; " >
+		<h1 style="text-align:center; font-family : Papyrus,fantasy; font-size : 50px;">The Dinner Menu</h1>
+		<div id = "firstContainer">
+			<div id = "FirstProduct">
+				<img  alt="food image" src = "images/pic3.jpg" style="left:33%; position:relative;border-radius:40px;"" height="500" width="500"><br>
+				<p id = "firstText" style="left:13%; position:relative;font-size : 20px;">
+				<b>A set menu with a street food fiesta with an authentic srilankan twist.</b><br><br>
+				Contents:<br>
+				&#8226; Kottu for 5 people.<br>
+				&#8226; Jaffna style chicken curry.<br>
+				&#8226; Hoppers for 5 people.<br>
+				&#8226; A Katta sambol to die for.<br>
+				Add the amount of items you need for each choice and press respective option before placing the order<br><br>
+				
+				
+				</p>
+			</div>
+			
+			<div id = "firstDetails" style=" text-align:center;">
+				<label for = "itemNums1" style="font-size : 25px;">How many item do you want from the Dinner spread :</label>
+				<input type = "text" id = "itemNums1" name = "foodOne" placeholder="1"><br><br><br>
+				<br><br>
+				     <button id="myBtn1" onclick="reply_click(this.id)" >Option 1</button><br><br><br>
+			
+					<button id="myBtn" onclick="getValue()">order now</button>
+					<bu</button->
+					<button><a style="text-decoration: none; color: inherit;"href="nicestyle.html">Back to meal selection</a></button>
+					
+		</div><br><br>
+<div id="page editor" style="position:absolute; bottom:0;right:5px;padding-bottom:30px;padding-right:10px;"><a href="pageeditorvenura.html">page editor</a></div>		
+		<div class="middle2" >
+		<footer>
+		<p style="font-size:15px;color : #646464; position:absolute;bottom:5px;left:35%;">ALL RIGHTS RESERVED COPYRIGHT © 2020 - DESIGNED BY GROUP V</p>
+		</footer>
+		</div>
+	</div>	
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<div class="outerMost">
+				<div class="checkoutBox">
+				  <div class="title">Checkout Form</div>
+				  <form name = "myForm" onsubmit="return validateForm()">
+				  <div class="input-form">
+					<div class="data-1">
+					  <div class="items">
+						<label class="label">Full name</label>
+						<input type="text" class="input" name="Fname" placeholder="Full name">
+					  </div>
+					</div>
+					<div class="data-2">
+					  <div class="items">
+						<label class="label">Address</label>
+						<input type="text" class="input" name="Address" placeholder="Address">
+					  </div>
+					</div>
+					<div class="data-3">
+					  <div class="items">
+						<label class="label">Telephone number</label>
+						<input type="text" class="input" name="Telephone"  placeholder="07X-XXXXXXX">
+					  </div>
+					  <div class="items">
+						<div class="cvcId">
+						  <label class="label">ID number</label>
+						  <div class="tip">?
+							<div class="cvcId-img"></div>
+						  </div>
+						</div>
+						<input type="text" class="input" name = "ID" placeholder="ID n">
+					  </div>
+					</div>
+				  </div>
+				  
+				  <div class="submitButton">Please fill the below details regardless of the payment method.</div>
+					<br><br>
+					
+					<div class="input-form">
+					  <div class="data-1">
+						<div class="items">
+						  <label class="label">card number</label>
+						  <input type="text" class="input" maxlength="16" name = "card" placeholder="xxxx xxxx xxxx xxxx">
+						</div>
+					  </div>
+					 
+					  <div class="data-2">
+						<div class="items">
+						  <label class="label">Expire date</label>
+						  <input type="text" class="input" name = "Expire" placeholder="MM / YY">
+						</div>
+						<div class="items">
+						  <div class="cvcId">
+							<label class="label">cvc code</label>
+							<div class="tip">?
+							  <div class="cvcId-img"></div>
+							</div>
+						  </div>
+						  <input type="text" class="input" name="CVC"  placeholder="0000">
+						</div>
+					  </div>
+					</div>
+					
+					<div class="submitbutton"><input id="submit"type = "submit"></div>
+					</form>
+				  </div>
+			  
+				</div>
+			</div>
+		</div>
+	<script>
+	var modal = document.getElementById("myModal");
+	var btn = document.getElementById("myBtn");
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+	</script>
+		
+    </body>
+</html>

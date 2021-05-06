@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title id="theTitle">Gallery</title>
+    <link rel="stylesheet" href="GalleryStyle.css">
+</head>
+<body id="pageBody">
+
+<a name="top"></a>
+
+<div id="nav">
+    <ul>
+		<li><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact</a></li>
+		<li><a href="nicestyle.html">Food Menu</a></li>
+		<li><a class="active" href="foodsite.html">Home</a></li>  
+    </ul>
+
+    <div style="left:0; top:0; position:absolute;"><img src="images/logo tiny.jpg" alt="Logo image" style="width:120px;height:120px;border-radius: 80px;"/></div>
+</div>
+
+
+<div class="top-area">
+
+    <!--Selected Image Slot-->
+    <img src="images/kavum.jpg" id="selectedImg"/>
+
+    <!--Description Section-->
+    <div id="descBox">
+        <h4 id="descHeading">Heading</h4>
+        <div id = "descDetails">
+            <h6 id="descDetailSlot">Description</h6>
+        </div>
+    </div>
+
+    <!--Color Selection Section-->
+    <form id="colorSelectOptions">
+        <select id="pageColorSelect">
+            <option name="colorSelect" value="colorSelect" id="colorSelect">Color Select</option>
+            <option name="white" value="white" id="white">White</option>
+            <option name="brown" value="brown" id="brown">Brown</option>
+            <option name="black" value="black" id="black">Black</option>
+        </select>
+        <select id="fontColorSelect">
+            <option name="fontColor" value="black" id="fontColor">Font Color</option>
+            <option name="whiteFont" value="white" id="whiteFont">White Font</option>
+            <option name="brownFont" value="brown" id="brownFont">Brown Font</option>
+            <option name="blackFont" value="black" id="blackFont">Black Font</option>
+        </select>
+    </form>
+</div>
+
+<div class="img-container">
+    <img src="images/kavum.jpg" alt="Kavum.jpg" onmousedown="imgClicked(0)">
+    <img src="images/kiriBath.jpg" alt="KiriBath.jpg" onmousedown="imgClicked(1)">
+    <img src="images/appa.jpg" alt="appa.jpg" onmousedown="imgClicked(2)">
+    <img src="images/kokis.jpg" alt="kokis.jpg" onmousedown="imgClicked(3)">
+    <img src="images/roti.jpg" alt="Roti.jpg" onmousedown="imgClicked(4)">
+    <img src="images/watalappan.jpg" alt="Watalappan.jpg" onmousedown="imgClicked(5)">
+</div>
+
+<hr>
+<a id="pageEditorAnchor" href="PageEditor_Mudith.html">Page Developer</a>
+<br>
+<a href="#top">Back To Top</a>
+
+<script>
+
+    var itemNames = ["Kevum" , "Kiribath" ,"Hoppers", "Kokis","Roti","Watalappan"];
+    var itemDesc = ["Sri Lankan sweet made from rice flour and kithul (sugar-palm) treacle, with a number of variants adding additional ingredients. It is also known as oil cake. Kevum is traditionally given and consumed during celebrations of Sinhala New Year." ,
+        "Kiri is milk and bath is rice. It is a creamy rice cake with a subtle hint of coconut flavor. In a Sinhalese home, special occasions begin with kiribath. " ,
+        "Hoppers in their simplest form are bowl-shaped pancakes made from fermented rice flour and coconut milk. Cooked in small round pans, they tend to come out crispy round the edges, thicker at the bottom." ,
+        "Kokis is a deep-fried, crispy Sri Lankan food made from rice flour and coconut milk. Although considered as a traditional Sri Lankan dish, it is believed to have come from the Dutch. This is an important dish when celebrating Sinhala and Tamil New Year and plays a major role in the festivities." ,
+        "Roti is a round flatbread native to the Indian subcontinent made from stoneground wholemeal flour, traditionally known as atta, and water that is combined into a dough. Roti is consumed in many countries worldwide. Its defining characteristic is that it is unleavened." ,
+        "Watalappam is a coconut custard pudding made of coconut milk or condensed milk, jaggery, cashew nuts, eggs, various spices, including cardamom, cloves, and nutmeg, and sometimes thick pandan juice or grated vanilla pods."];
+
+    var imgSources = ["images/kavum.jpg" , "images/kiriBath.jpg" , "images/appa.jpg" , "images/kokis.jpg" , "images/roti.jpg" ,"images/watalappan.jpg"];
+    //Setting Default Image and Description
+    document.getElementById("descHeading").innerHTML = itemNames[0];
+    document.getElementById("descDetailSlot").innerHTML = itemDesc[0];
+    document.getElementById("selectedImg").src = imgSources[0];
+
+
+    function imgClicked(imgIndex){
+        document.getElementById("descHeading").innerHTML = itemNames[imgIndex];
+        document.getElementById("descDetailSlot").innerHTML = itemDesc[imgIndex];
+        document.getElementById("selectedImg").src = imgSources[imgIndex];
+        //Also updates the text colors
+        colorSwitch();
+    }
+
+    document.getElementById("fontColorSelect").addEventListener("click",colorSwitch);
+    document.getElementById("pageColorSelect").addEventListener("click",colorSwitch);
+    function colorSwitch() {
+        var option = document.getElementById("pageColorSelect").value;
+        var pageBody = document.getElementById("pageBody");
+        if(option == "white"){
+            pageBody.style.backgroundColor = "white";
+        }
+        if(option == "brown"){
+            pageBody.style.backgroundColor = "#e8900c";
+        }
+        if(option == "black"){
+            pageBody.style.backgroundColor = "black";
+        }
+        document.getElementById("descDetailSlot").style.color = document.getElementById("fontColorSelect").value;
+        document.getElementById("descHeading").style.color = document.getElementById("fontColorSelect").value;
+    }
+
+
+
+</script>
+
+</body>
+</html>

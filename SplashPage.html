@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div{
+            background: url("images/spiceBackground.jpg");
+            height: 720px;
+            backdrop-filter: brightness(90%);
+            animation-name: firstAnim;
+            animation-duration: 1s;
+        }
+        #imgSlot{
+            position: relative;
+            left: 660px;
+            top:240px;
+            width: 200px;
+            height: 200px;
+            background: url("images/logo tiny .png");
+            animation-name: secondAnim;
+            animation-duration: 3s;
+        }
+
+        @keyframes firstAnim {
+            0%{height: 10px;}
+            100%{height: 720px;}
+        }
+
+        @keyframes secondAnim {
+            0%{opacity: 0%;}
+            50%{opacity: 0%;top: 0px}
+            100%{opacity: 100%;top:240px; }
+        }
+
+        body{
+            background-color: blue;
+            animation-name: bodyAnim;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes bodyAnim {
+            from{background-color: sandybrown;}
+            to{background-color: coral;}
+            to{background-color: wheat;}
+        }
+    </style>
+
+</head>
+<body>
+
+
+<div>
+    <text>Test Text</text>
+    <div id="imgSlot"></div>
+</div>
+
+<script>
+    setTimeout(redirect , 4000)
+    function redirect(){
+        window.location.href = "foodsite.html";
+    }
+</script>
+
+</body>
+</html>

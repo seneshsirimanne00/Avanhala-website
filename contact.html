@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Contact us</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="styles c.css" type="text/css">
+		
+    </head>
+    <body>
+	<script type = "text/javascript">
+		function validateForm() {     //function to check name and display msg
+		if( document.feedbackform.name.value == "" ) {
+            alert( "enter your name!!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+		var ratecategory = document.getElementsByName("rating");    //for loop to check radio buttons
+		var check = 0;
+		for(i=0;i<ratecategory.length;i++){
+			if(ratecategory[i].checked){
+			  check++;
+			  break;
+			}
+		}
+		if(check){     // function to display radio button missing msg
+		}else{
+		alert("Please select a rating!");
+		return false;
+		}
+		return( true );
+		 
+		}
+		function message() {
+		window.alert("Dear "+document.feedbackform.name.value+" ,Thank you you very much for your feedback. You have rated our site as " + document.feedbackform.rating.value+ " and your comment was '"+ document.feedbackform.comment.value+"'");
+		}
+		
+</script>
+	<div id="nav"> <!-- nav bar stats here  -->
+		<ul>
+		  <li><a href="about.html">About</a></li>
+		  <li><a class="active" href="contact.html">Contact</a></li>
+		  <li><a href="nicestyle.html">Food Menu</a></li>
+		  <li><a  href="foodsite.html">Home</a></li>  
+        </ul>
+		<div style="left:0; top:0; position:absolute;"><img src="images/logo tiny.jpg" alt="logo" style="width:120px;height:120px;border-radius: 80px;"/></div>
+	</div>   <!-- nav bar ends  -->
+		
+	
+		<div class="container">
+			<div class="item"><div class="image" style="float:left;"><img alt="middle image" src="images/c2.jpg" style="width:480px;height:550px;"></div>
+				<form name="feedbackform" method="post" onsubmit="return(validateForm(),message());">   <!-- form starts here -->
+					<div class="boxes">
+						<h1> Contact us</h1>  <!-- divition for the part next to the middle image -->
+						<input type="text"  id="name" name="name" placeholder="Name*"/>
+						<input type="text"  id="email" name="email" placeholder="Email*"/><br>
+						
+						<textarea rows="6" cols="50" id="comment" name="comment" >Message*</textarea>
+						<br>
+						
+						<label>Rate us :</label>          <!--radio buttons to get rationg -->
+							<input type="radio" id="verybad" name="rating" value="very bad">
+							<label for="verybad"> Very Bad</label>
+							<input type="radio" id="bad" name="rating" value="bad">
+							<label for="bad"> Bad</label>
+							<input type="radio" id="okay" name="rating" value="okay">
+						    <label for="okay"> Okay</label>
+						    <input type="radio" id="good" name="rating" value="good">
+						    <label for="good"> Good</label>
+							<input type="radio" id="great" name="rating" value="great">
+						    <label for="great">  Great</label>
+						    <input type="radio" id="excelent" name="rating" value="excelent">
+						    <label for="excelent"> Excelent</label>
+							
+							<br><br><br><br><br>
+							<div id="page editor" style="float:right;padding-bottom:30px;padding-right:10px;"><a href="pageeditorsenesh.html">page editor</a></div>
+						<div class="submit"><input type="submit" value="Submit"></div>
+						
+					</div>	
+				</form>
+					
+			</div>
+		</div>	
+		<!--  footer part  -->
+		<p style="font-size:15px;color :white; position:absolute;bottom:0px;left:35%;">ALL RIGHTS RESERVED COPYRIGHT © 2020 - DESIGNED BY GROUP V</p>
+		
+	</body>
+</html>
